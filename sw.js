@@ -1,7 +1,7 @@
 var STATIC_CACHE_NAME = 'restaurant-cache-v';
 //Rundom Number for CacheId
-var randomNumberBetween0and19999 = Math.floor(Math.random() * 20000);
-var cache_id = randomNumberBetween0and19999;
+var random_Number = Math.floor(Math.random() * 20000);
+var cache_id = random_Number;
 STATIC_CACHE_NAME += cache_id;
 
 var urlsToCache = [
