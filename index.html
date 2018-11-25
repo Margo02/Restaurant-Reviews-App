@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,25 +11,29 @@
 </head>
 
 <body>
-  <header>
+  <header role="banner">
     <nav>
-      <h1><a tabindex="0" href="/">Restaurant Reviews</a></h1>
+      <h1><a href="/" aria-label="Back to home page">Restaurant Reviews</a></h1>
     </nav>
   </header>
 
   <main id="maincontent" role="main">
-    <section tabindex="0" id="map-container">
-      <div tabindex="0" id="map" aria-label="Map of restaurants" role="application"></div>
+    <section id="map-container">
+      <div id="map" aria-label="Google map" role="application"></div>
     </section>
-    <section>
-      <div class="filter-options" aria-label="Filter Results" role="listbox">
-        <h2>Filter Results</h2>
+    <section id="filter-container">
+      <div class="filter-options" tabindex="0" aria-label="Filter Results" role="listbox">
+        <h2 id="filter-label">Filter Results</h2>
+        <div class="filter-selects">
+        <label for="neighborhoods-select">All Neighborhoods Filter</label>
         <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()" aria-label="Select neighborhood" aria-controls="restaurants">
           <option value="all">All Neighborhoods</option>
         </select>
-        <select tabindex="0" id="cuisines-select" name="cuisines" onchange="updateRestaurants()" aria-label="Select Cusisines" aria-controls="restaurants">
+        <label for="cuisines-select">All Cuisines Filter</label>
+        <select id="cuisines-select" name="cuisines" onchange="updateRestaurants()" aria-label="Select Cusisines" aria-controls="restaurants">
           <option value="all">All Cuisines</option>
         </select>
+      </div>
       </div>
       <ul id="restaurants-list" aria-live="polite" role="list"></ul>
     </section>
@@ -39,8 +43,8 @@
   <script type="application/javascript" charset="utf-8" src="js/sw_registration.js"></script>
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdJ5rL77S70FjokcKFFWbOnPRhtHXZ_fo&callback=initMap" type="text/javascript"></script>
 
-  <footer id="footer">
-    Copyright (c) 2017 <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
+  <footer id="footer" aria-label="Copyright">
+    Copyright (c) 2017 <a href="/" aria-label="Back to home page"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
   </footer>
 
 </body>
